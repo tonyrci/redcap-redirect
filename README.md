@@ -96,7 +96,8 @@ a2enmod rewrite
 				<add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
 				<add input="{REQUEST_URI}" pattern="^.*\/redcap_v(\d+\.\d+\.\d+)\/.*$" />
 			</conditions>
-			<action type="Rewrite" url="/path/to/redcap_redirect.php" appendQueryString="false" />
+			<!-- Change the url value if REDCap is in a sub-directory, e.g. url="/redcap/redcap_redirect.php" -->
+			<action type="Rewrite" url="/redcap_redirect.php" appendQueryString="false" />
 		</rule>
 	</rules>
 </rewrite>
